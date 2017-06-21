@@ -5,7 +5,11 @@ package training.com.DP;
  */
 public class ChangeMaking {
 
-    public int GetChange(long amount, int[] coins, int idx, String current){
+    public int GetChange(long amount, int[] coins, int idx, String current, int[][] map){
+
+        if (map[(int)amount][idx]>0){
+            return map[(int)amount][idx];
+        }
 
         if (idx >= coins.length){
             if (amount == 0) {
@@ -20,7 +24,7 @@ public class ChangeMaking {
         for (int i=0; amount>=coin*i;i++){
             ways+= GetChange(amount-coin*i,coins,idx+1, current+" "+i+"x"+coin);
         }
-
+        map[(int)amount][idx] = ways;
         return ways;
     }
 
@@ -28,6 +32,8 @@ public class ChangeMaking {
         int[] a = {1,2};
         ChangeMaking cm = new ChangeMaking();
 
-        System.out.println(cm.GetChange(9,a,0,""));
+        int amount = 9;
+        int[][] map = new int[amount+1][a.length+1];
+        System.out.println(cm.GetChange(amount,a,0,"",map));
     }
 }
