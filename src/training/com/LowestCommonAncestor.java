@@ -32,21 +32,21 @@ public class LowestCommonAncestor {
         }
         Queue<Node> q = new LinkedList<>();
         Node cur = null;
-        q.offer(rootNode);
+        q.add(rootNode);
         final Map<Node, Node> parents = new HashMap<>();
         final Set<Node> path = new HashSet<>();
         parents.put(rootNode, null);
         boolean firstFound = false;
         boolean secondFound = false;
         while(!q.isEmpty()) {
-            cur = q.poll();
+            cur = q.remove();
             if(cur.left != null) {
                 parents.put(cur.left, cur);
                 q.offer(cur.left);
             }
             if(cur.right != null) {
                 parents.put(cur.right, cur);
-                q.offer(cur.right);
+                q.add(cur.right);
             }
             if((firstFound || secondFound) && (cur.data == first || cur.data == second)) {
                 Node n = cur;
