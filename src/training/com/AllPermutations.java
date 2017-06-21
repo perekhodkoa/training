@@ -5,25 +5,37 @@ package training.com;
  */
 public class AllPermutations {
 
-    public void AllNumberPermutations(int source[], int[] current, int idx, int sidx){
-        if (idx >= current.length) {
-           for (int i=0;i<current.length;i++)
-            System.out.print(current[i]+" ");
-           System.out.println();
-           return;
+
+        static void permute(int[] a, int k) {
+            if (k == a.length) {
+                for (int i = 0; i < a.length; i++) {
+                    System.out.print(" [" + a[i] + "] ");
+                }
+                System.out.println();
+            } else {
+                for (int i = k; i < a.length; i++) {
+                    int temp = a[k];
+                    a[k] = a[i];
+                    a[i] = temp;
+
+                    permute(a, k + 1);
+
+                    temp = a[k];
+                    a[k] = a[i];
+                    a[i] = temp;
+                }
+            }
         }
 
+        public static void main(String args[]) {
+            int N = 3;
+            int[] sequence = new int[N];
 
-        for (int i = 0;i <sidx;i++) {
-            current[idx] = source[idx];
-            AllNumberPermutations(source, current, idx + 1, i);
+            for (int i = 0; i < N; i++) {
+                sequence[i] = i + 1;
+            }
+
+            permute(sequence, 0);
+
         }
     }
-
-    public static void main(String[] args){
-        int[] a = {1,2,3,4};
-        int[] c = new int[a.length];
-        AllPermutations ap = new AllPermutations();
-        ap.AllNumberPermutations(a,c,0,a.length);
-    }
-}
