@@ -22,7 +22,7 @@ public class ChangeMaking {
         int coin = coins[idx];
         int ways = 0;
         for (int i=0; amount>=coin*i;i++){
-            ways+= GetChange(amount-coin*i,coins,idx+1, current+" "+i+"x"+coin);
+          //  ways+= GetChange((int)amount-coin*i,coins,idx+1, current+" "+i+"x"+coin);
         }
         map[(int)amount][idx] = ways;
         return ways;
