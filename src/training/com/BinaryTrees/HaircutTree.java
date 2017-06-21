@@ -1,9 +1,6 @@
-package training.com;
+package training.com.BinaryTrees;
 
-import java.util.HashMap;
-
-import static com.sun.tools.doclint.Entity.le;
-import static com.sun.tools.doclint.Entity.sum;
+import training.com.Node;
 
 /**
  * Created by sentinel on 6/14/17.

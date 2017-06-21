@@ -1,4 +1,4 @@
-package training.com;
+package training.com.Stacks;
 
 import java.util.Stack;
 

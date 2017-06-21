@@ -1,4 +1,4 @@
-package training.com;
+package training.com.BinarySearch;
 
 /**
  * Created by sentinel on 6/14/17.
