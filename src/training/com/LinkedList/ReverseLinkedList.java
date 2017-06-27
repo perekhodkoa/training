@@ -1,4 +1,6 @@
-package training.com;
+package training.com.LinkedList;
+
+import training.com.Node;
 
 /**
  * Created by sentinel on 6/12/17.
