@@ -1,4 +1,4 @@
-package training.com.BinarySearch.IOStuff;
+package training.com.IOStuff;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

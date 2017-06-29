@@ -1,4 +1,6 @@
-package training.com;
+package training.com.BinaryTrees;
+
+import training.com.Node;
 
 import java.util.*;
 

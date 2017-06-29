@@ -1,4 +1,4 @@
-package training.com;
+package training.com.ArithmeticOperations;
 
 /**
  * Created by sentinel on 6/12/17.
